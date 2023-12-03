@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Food Delivery App - Login</title>
+  <link rel="stylesheet" href="css/style1.css">
+</head>
+<body>
+  <header>
+    <div class="featured-header">
+      <!-- Featured content or banner -->
+      <h1>Welcome to Grab EAT!</h1>
+      <p>Order delicious food from your favorite food stalls</p>
+    </div>
+  </header>
+
+  <main>
+    <!-- Login Form -->
+    <section id="login">
+      <h2>Login</h2>
+      <form id="loginForm">
+        <input type="email" placeholder="Email" id="loginEmail">
+        <input type="password" placeholder="Password" id="loginPassword">
+        <button type="button" onclick="handleLogin()">Login</button>
+      </form><br><br><br><br><br>
+      <button onclick="openRegistration()">Register</button>
+    </section>
+
+    <script src="js/auth.js"></script>
+    <script>
+      function handleLogin() {
+        const loginEmail = document.getElementById('loginEmail').value;
+        const loginPassword = document.getElementById('loginPassword').value;
+
+        const loginResult = loginUser(loginEmail, loginPassword);
+
+        if (loginResult.success) {
+          alert(`${loginResult.message}! Redirecting to GrabEAT`);
+          window.location.href = 'index.html'; // Redirect to index.html if login successful
+        } else {
+          alert(loginResult.message);
+        }
+      }
+
+      function openRegistration() {
+        window.location.href = 'registration.html'; // Redirect to registration.html
+      }
+    </script>
+  </main>
+</body>
+</html>

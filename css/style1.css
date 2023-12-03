@@ -1,0 +1,165 @@
+/* General styles */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #FFA500; /* Orange background */
+}
+
+/* Header styles */
+header {
+  background-color: #333;
+  padding: 20px;
+  text-align: center;
+}
+
+.featured-header {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+h1 {
+  font-size: 2.5em;
+  margin-bottom: 10px;
+  color: #ffffff;
+}
+
+p {
+  font-size: 1.2em;
+  color: #ffffff;
+}
+
+/* Button styles */
+button {
+  padding: 8px 16px;
+  font-size: 1em;
+  background-color: #703200;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #532500;
+}
+
+/* Main section styles */
+main {
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 20px;
+  text-align: center; /* Center align main content */
+}
+
+/* Section styles */
+section {
+  margin-bottom: 20px;
+  text-align: center; /* Center align section content */
+}
+
+h2 {
+  font-size: 1.8em;
+  margin-bottom: 10px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-width: 300px;
+  margin: 0 auto;
+}
+
+input[type="email"],
+input[type="password"],
+input[type="text"] {
+  padding: 10px;
+  font-size: 1em;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+input[type="email"]:focus,
+input[type="password"]:focus,
+input[type="text"]:focus {
+  outline: none;
+  border-color: #0a7900;
+}
+
+button[type="button"],
+button[type="submit"] {
+  padding: 10px 20px;
+  font-size: 1em;
+  background-color: #703200;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+/* Smaller sized buttons */
+button[type="button"],
+button[type="submit"],
+button[type="button"].smaller,
+button[type="submit"].smaller {
+  padding: 8px 16px; /* Adjusted padding */
+  font-size: 0.9em; /* Smaller font size */
+}
+
+/* Smaller buttons */
+button.smaller {
+  padding: 8px 16px;
+  font-size: 0.9em;
+}
+
+/* Black text color */
+.black {
+  color: black;
+}
+
+button[type="button"]:hover,
+button[type="submit"]:hover {
+  background-color: #532500;
+}
+
+/* Improve form styling */
+form {
+  max-width: 300px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+label {
+  font-weight: bold;
+}
+
+input {
+  padding: 10px;
+  font-size: 1em;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+/* Instructions style */
+.instructions {
+  font-size: 0.9em;
+  margin-top: 15px;
+}
+
+.instructions a {
+  color: #703200;
+  text-decoration: none;
+}
+
+.instructions a:hover {
+  text-decoration: underline;
+}
+
+#paymentOptions {
+  display: block;
+}

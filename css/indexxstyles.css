@@ -1,0 +1,10 @@
+body {
+    font-family: Arial, sans-serif;
+}
+li {
+    list-style-type: none;
+    margin-bottom: 10px;
+}
+button {
+    margin-left: 15px;
+}

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBzsnzak-DD4krxToY1xHxsL8ZM7IDlw8g&libraries=places"></script>
+  <meta charset="UTF-8">
+  <title>Food Delivery App - Index</title>
+  <link rel="stylesheet" href="css/style1.css">
+</head>
+<body>
+  <header>
+    <div class="featured-header">
+      <!-- Featured content or banner -->
+      <h1>Welcome to Grab EAT!</h1>
+      <p>Order delicious food from your favorite food stalls</p>
+    </div>
+    <button onclick="scrollToSection()">Shopping Cart</button>
+  </header>
+
+  <main>
+    <section id="restaurantList">
+      <h2>Restaurants</h2>
+      <!-- Restaurant list dynamically populated from JavaScript -->
+    </section>
+    <section id="map"> <div id="map"></div>
+      <button onclick="pinLocation()">Pin Location</button> 
+    </section>
+
+    <section id="menu" style="display: none;">
+      <h2 id="restaurantName"></h2>
+      <div id="menuItems"></div>
+      <button onclick="showRestaurantList()" class="smaller">Back to Food Stalls</button>
+    </section>
+
+    <section id="cart" style="display: none;">
+      <h2>Shopping Cart</h2>
+      <div id="cartItems"></div>
+      <p class="black">Total: <span id="cartTotal" class="black">₱0</span></p>
+      <button onclick="proceedToPayment()" class="smaller">Proceed to Payment</button>
+      <button onclick="goBackToMenu()" class="smaller">Go Back to Food Stalls</button>
+      <button onclick="removeFromCart()" class="smaller">Clear cart</button>
+    </section>
+
+    <section id="sectionToScrollTo">
+
+      <section id="payment" style="display: none;">
+        <h2>Payment</h2>
+        <div>
+          <h3>Cart Items:</h3>
+          <ul id="cartItemsPayment"></ul>
+        </div>
+        <form id="paymentForm">
+          <p id="serviceFee" class="black">Service fee: ₱10</p>
+          <p class="black">Total amount to pay: <span id="paymentTotal">₱0</span></p><br><br><br>
+          <!-- Payment options -->
+          <div id="paymentOptions">
+
+            <h3>Select Payment Method:</h3>
+            <select id="paymentMethod">
+              <option value="Gcash">Gcash</option>
+              <option value="CreditCard">Cash on Delivery</option>
+              <!-- Add more payment options if needed -->
+            </select>
+          </div>
+          <!-- End of payment options -->
+      
+          <label for="fullName">Enter Name:</label>
+          <input type="text" id="fullName" name="fullName" required><br>
+      
+          <label for="Section">Section:</label><br>
+          <input type="text" id="Section" name="Section" required><br>
+      
+          <label for="RoomNumberAddress">Address or Room Number:</label>
+          <input type="text" id="RoomNumberAddress" name="RoomNumberAddress" required><br>
+      
+          <label for="phone">Mobile Number:</label>
+          <input type="text" id="phone" name="phone" required><br><br>
+      
+          <button onclick="showPaymentOptions()">Pay Now</button>
+          <button onclick="goBackToMenu()" class="smaller">Go Back to Food Stalls</button>
+        </form>
+      </section>
+
+<section id="account" style="display: none;">
+  <h2>User Account</h2>
+  <form id="accountForm" onsubmit="saveAccountInfo(event)">
+    <label for="fullName">Name:</label>
+    <input type="text" id="fullName" name="fullName" required><br>
+
+    <label for="section">Section:</label><br>
+    <input type="text" id="section" name="section" required><br>
+
+    <label for="mobileNumber">Mobile Number:</label>
+    <input type="text" id="mobileNumber" name="mobileNumber" required><br>
+
+    <button type="submit">Save</button>
+    <button onclick="goBackToMenu()" class="smaller">Go Back to Food Stalls</button>
+  </form>
+</section>
+
+
+
+  </main>
+
+  <script src="js/auth.js"></script>
+<script src="js/script.js"></script>
+
+<script>function handleLogin() {
+  const loginEmail = document.getElementById('loginEmail').value;
+  const loginPassword = document.getElementById('loginPassword').value;
+
+  const loginResult = loginUser(loginEmail, loginPassword);
+
+  if (loginResult.success) {
+    // Display user account information after successful login
+    displayAccountInfo(loginEmail);
+    alert(`${loginResult.message}! Redirecting to index.html`);
+    window.location.href = 'index.html'; // Redirect to index.html if login successful
+  } else {
+    alert(loginResult.message);
+  }
+}
+
+</script>
+
+</body>
+</html>

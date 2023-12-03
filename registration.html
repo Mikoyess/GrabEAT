@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Food Delivery App - Registration</title>
+  <link rel="stylesheet" href="css/style1.css">
+</head>
+<body>
+  <header>
+    <div class="featured-header">
+      <!-- Featured content or banner -->
+      <h1>Welcome to Grab EAT!</h1>
+      <p>Create an account to start ordering delicious food!</p>
+    </div>
+    <button onclick="scrollToSection()">Shopping Cart</button>
+  </header>
+
+  <main>
+    <!-- Registration Form -->
+    <section id="registration">
+      <h2>Register</h2>
+      <form id="registerForm">
+        <input type="email" placeholder="Email" id="registerEmail">
+        <input type="password" placeholder="Password" id="registerPassword">
+        <button type="button" onclick="handleRegistration()">Register</button>
+      </form><br><br><br><br><br>
+      <button onclick="backToLogin()">Back to Login</button>
+      
+    <script src="js/auth.js"></script>
+    <script>
+      function handleRegistration() {
+  const registerEmail = document.getElementById('registerEmail').value;
+  const registerPassword = document.getElementById('registerPassword').value;
+
+  const registrationResult = registerUser(registerEmail, registerPassword);
+  if (registrationResult.success) {
+    // Save user account information after successful registration
+    saveAccountInfo(registerEmail); // Pass email as a parameter to identify the user
+    alert('Registration successful. You can now log in.');
+  } else {
+    alert(registrationResult.message);
+  }
+}
+
+      function backToLogin() {
+        window.location.href = 'login.html'; // Redirect to login.html
+      }
+    </script>
+  </main>
+</body>
+</html> 
